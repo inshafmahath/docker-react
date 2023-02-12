@@ -19,12 +19,13 @@ jobs:
 
       - name: Deploy to EB
         uses: inshafmahath/docker-react@main
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_KEY }}
+          AWS_DEFAULT_REGION: me-south-1
         with:
-          aws_access_key: ${{ secrets.AWS_ACCESS_KEY }}
-          aws_secret_key: ${{ secrets.AWS_SECRET_KEY }}
           application_name: docker-react
           environment_name: Dockerreact-env
           existing_bucket_name: elasticbeanstalk-me-south-1-442139459500
-          region: me-south-1
           version_label: ${{ github.sha }}
           deployment_package: deploy.zip
