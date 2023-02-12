@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: docker build -t react-gh -f Dockerfile.dev .
-      - run: docker run -e CI=true react-gh npm test
+      - run: docker run react-gh npm test
 
       - name: Generate deployment package
         run: zip -r deploy.zip . -x '*.git*'
