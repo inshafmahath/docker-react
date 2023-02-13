@@ -9,7 +9,7 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        This react app is deployed in Elastic Beanstack!
+        This react app is deployed in Elastic Beanstalk!
       </header>
     </div>
   );
